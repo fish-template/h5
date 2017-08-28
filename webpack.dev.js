@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, 'src'),
         publicPath: '/',
         host: '0.0.0.0',
         hot: true,

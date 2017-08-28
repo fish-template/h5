@@ -7,8 +7,7 @@ const merge = require('webpack-merge');
 module.exports = function(env) {
     return merge(require(`./webpack.${env}.js`), {
         entry: {
-            app: './src/app.js',
-            print: './src/print.js',
+            app: './src/app',
             // vendor: [
             //     'lodash'
             // ]
@@ -45,13 +44,12 @@ module.exports = function(env) {
                     }
                 }
             }, {
-                test: /\.js$/,
-                use: {
+                test: /\.(js|jsx)?$/,
+                use: [{
                     loader: 'babel-loader',
-                }
+                }]
             }]
         },
-
         plugins: [
             new webpack.DefinePlugin({
                 'process.env': {
