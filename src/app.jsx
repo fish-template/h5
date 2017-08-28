@@ -1,4 +1,4 @@
-// import './asset/scss/common.scss'
+import './asset/scss/common.scss'
 import Home from './containers/home/index'
 import { render } from 'react-dom'
 import React from 'react'

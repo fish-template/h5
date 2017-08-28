@@ -4,13 +4,12 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const pk = require('./package.json');
 module.exports = function(env) {
     return merge(require(`./webpack.${env}.js`), {
         entry: {
             app: './src/app',
-            // vendor: [
-            //     'lodash'
-            // ]
+            vendor: Object.keys(pk.dependencies)
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -29,6 +28,7 @@ module.exports = function(env) {
                 use: env === 'dev' ? [
                     'style-loader',
                     'css-loader',
+                    'postcss-loader',
                     'sass-loader'
                 ] : ExtractTextWebpackPlugin.extract({
                     fallback: 'style-loader',
