@@ -13,8 +13,8 @@ module.exports = function(env) {
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: 'js/[name].bundle.js',
-            publicPath: '/'
+            filename: '[name].bundle.js',
+            // publicPath: ''
         },
         resolve: {
             extensions: ['.js', '.jsx', '.json'],
@@ -40,7 +40,7 @@ module.exports = function(env) {
                     loader: 'file-loader',
                     options: {
                         limit: 10000,
-                        name: 'img/[name].[hash:7].[ext]'
+                        name: '[name].[hash:7].[ext]'
                     }
                 }
             }, {
@@ -57,7 +57,7 @@ module.exports = function(env) {
                 }
             }),
             new ExtractTextWebpackPlugin({
-                filename: 'css/[name].css'
+                filename: '[name].css'
             }),
             new CleanWebpackPlugin('dist'),
             new HtmlWebpackPlugin({

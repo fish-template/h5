@@ -1,9 +1,10 @@
 import React , { Component }from 'react';
+import icon from '../../asset/img/index.png'
 class Home extends Component {
     render() {
       return  (
        		<div className="banner">
-       			222222
+       			<img src={icon} alt="" />
        		</div>
         )
     }

@@ -16,7 +16,7 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
-            filename: 'js/[name].js'
+            filename: '[name].js'
         })
 
     ]
